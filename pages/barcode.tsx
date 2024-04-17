@@ -5,9 +5,13 @@ const Barcode = () => {
     const [barCode, setBarcode] = useState<any>('No Barcode Scanned');
 
     if (typeof window !== 'undefined') {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useScanDetection({
             onComplete: setBarcode
         });
+    }
+    else {
+        return null;
     }
 
     return (
